@@ -36,17 +36,17 @@
 ## 基本离散几何
 <br />
 
-### **<center>1. HELLY 理论</center>**
+### **<center>1. HELLY 定理</center>**
 <br/>
 
 &emsp;&emsp;
 我们从Helly理论及其推广入手研究离散几何。这将占据该节与下一节的大部分。尽管这些结论相对的初级、简单，但它们是整个离散几何的核心，并且及其的有用（见第3节和第24节）。
 
-1.1. **Main result in slow motion.** 我们从平面上的经典*Helly理论*开始。  
+1.1. **Main result in slow motion.** 我们从平面上的经典*Helly定理*开始。  
 **定理1.1（Helly）** 设$X_1,...X_n\subset\mathbb{R}^2$ 为满足对于任意 $1 \leqslant i < j < k \leqslant n, 其中n \geqslant 3$，$X_i\cap X_j \cap X_k \neq \varnothing$。则存在点 $z\in X_1,...,X_n$。  
 
 &emsp;&emsp;
-也就是说，凸集中任意三个集合相交，则所有集合相交。凸条件在Helly理论中是必需的，这种必需性在 [图1.1](#FIG1_1) 的例子中展示出。  
+也就是说，多个凸集中任意三个相交，则所有凸集相交。凸条件在Helly定理中是必需的，这种必需性在 [图1.1](#FIG1_1) 的例子中展示出。  
 
 <div align=center><img src="./Pictures/FIG1_1.png"></div>
 <span id="FIG1_1">
@@ -60,8 +60,7 @@
 
 $$
 z\in conv \{v_1,v_3\}\cap conv \{v_2,v_4\}\subset(X_2\cap X_4)\cap (X_1 \cap X_3),
-$$  
-其中 $n=4$。
+$$ 其中 $n=4$。
 
 
 ><span id="NOTE_1_3">注：凸位置在原文中为Convex Position。
@@ -75,3 +74,10 @@ $$
 图 1.2. n=4 情况下的Helly理论
 </center>
 </span>  
+
+&emsp;&emsp;
+下面定义在本节通用的符号。记 $X_I= \cap _{i\in I}X_i$，其中 $ I \subset [n]=\{1,...,n\}$。在介绍部分，假设 $n > 4$ 且对任意 $(n-1)$—元素（$(n-1)$-subset）的子集 $i \in [n]$ 有 $X_I \neq \varnothing $。记 $v_i$ 为任意在 $X_{[n]-i}$ 中的点，考虑由 $v_1, v_2, v_3, v_4$ 四个点构成的形状。正如 $n=4$ 的情况下所描述的一样，这些点只能在或不在凸位置。根据上面的讨论，我们能证明在任意情况下存在点 $z\in X_{[n]}$。  
+
+&emsp;&emsp;
+这里我们给出高维度下的 Helly 定理：  
+**定理 1.2**（*d*-维 Helly 定理）设 $X_1,...,X_n \subset\mathbb{R}^d $ 为 $n \geqslant d+1$ 个凸集，使得对于每个子集 $I \subset [n]， |I| = d+1$ 有 $X_I \neq \varnothing$。则存在点 $z \in X_1, ...,X_n$。
